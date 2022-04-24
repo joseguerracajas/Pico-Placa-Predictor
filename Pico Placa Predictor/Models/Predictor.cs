@@ -11,7 +11,6 @@ namespace Pico_Placa_Predictor.Models
 
         [Required(ErrorMessage = "Please insert the date")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Date { get; set; }
 
         public Predictor(string plateNumber, DateTime date)
