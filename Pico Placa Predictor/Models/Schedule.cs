@@ -10,5 +10,10 @@ namespace Pico_Placa_Predictor.Models
         [Required(ErrorMessage = "The time is required.")]
         public TimeOnly EndTime { get; set; }
 
+        public Schedule(TimeOnly startTime, TimeOnly endTime)
+        {
+            StartTime = startTime;
+            EndTime = endTime;
+        }
     }
 }

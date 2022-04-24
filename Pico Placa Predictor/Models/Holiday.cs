@@ -10,5 +10,10 @@ namespace Pico_Placa_Predictor.Models
         [Required(ErrorMessage = "Please insert the holiday date")]
         public DateOnly StartTime { get; set; }
 
+        public Holiday(string description, DateOnly startTime)
+        {
+            Description = description;
+            StartTime = startTime;
+        }
     }
 }

@@ -9,5 +9,11 @@ namespace Pico_Placa_Predictor.Models
 
         [Required(ErrorMessage = "Please insert the restriction schedule list")]
         public List<Schedule>? Schedules { get; set; }
+
+        public Restriction(DateOnly day, List<Schedule> schedules)
+        {
+            Day = day;
+            Schedules = schedules;
+        }
     }
 }
