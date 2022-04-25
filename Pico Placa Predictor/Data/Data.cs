@@ -2,7 +2,7 @@
 
 namespace Pico_Placa_Predictor.Data
 {
-    public class Data
+    public class DataPicoPlaca
     {
         public static List<Schedule> Schedules = new List<Schedule>
         {
@@ -12,11 +12,11 @@ namespace Pico_Placa_Predictor.Data
 
         public static List<Restriction> Restrictions = new List<Restriction>
         {
-            new Restriction(1, Schedules , new List<int>{1,2}),
-            new Restriction(2, Schedules , new List<int>{3,4}),
-            new Restriction(3, Schedules , new List<int>{5,6}),
-            new Restriction(4, Schedules , new List<int>{7,8}),
-            new Restriction(5, Schedules , new List<int>{9,0}),
+            new Restriction(DayOfWeek.Monday, Schedules , new List<int>{1,2}),
+            new Restriction(DayOfWeek.Tuesday, Schedules , new List<int>{3,4}),
+            new Restriction(DayOfWeek.Wednesday, Schedules , new List<int>{5,6}),
+            new Restriction(DayOfWeek.Thursday, Schedules , new List<int>{7,8}),
+            new Restriction(DayOfWeek.Friday, Schedules , new List<int>{9,0}),
         };
 
         public static List<Holiday> Holidays = new List<Holiday>

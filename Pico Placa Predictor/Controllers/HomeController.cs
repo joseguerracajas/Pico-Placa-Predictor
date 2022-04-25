@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Pico_Placa_Predictor.Models;
+using Pico_Placa_Predictor.Services;
 using System.Diagnostics;
 
 namespace Pico_Placa_Predictor.Controllers
@@ -15,6 +16,9 @@ namespace Pico_Placa_Predictor.Controllers
 
         public IActionResult Index()
         {
+            PredictorService predictorService = new PredictorService();
+            Predictor predictor = new Predictor("PDL-7591", new DateOnly(2022,4,25), new TimeOnly(8,15));
+            predictorService.canBeonRoad(predictor);
             return View();
         }
 
