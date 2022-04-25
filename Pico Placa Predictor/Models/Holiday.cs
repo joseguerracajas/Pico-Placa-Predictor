@@ -8,14 +8,14 @@ namespace Pico_Placa_Predictor.Models
         public String? Description { get; set; }
 
         [Required(ErrorMessage = "Please insert the holiday date")]
-        public DateOnly StartTime { get; set; }
+        public DateOnly Date { get; set; }
 
-        public Holiday(string description, DateOnly startTime)
+        public Holiday(string description, DateOnly date)
         {
             Description = description;
-            StartTime = startTime;
+            Date = date;
         }
 
-        public override string ToString() => Description + ": " + StartTime.ToString();
+        public override string ToString() => Description + ": " + Date.ToString();
     }
 }

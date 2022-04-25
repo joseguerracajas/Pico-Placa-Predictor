@@ -9,7 +9,7 @@
 
 }
 
-<h1>Pico y Placa Predictor</h1>
+<h1>Pico Placa Predictor</h1>
 <hr />
 <div class="row">
     <div class="col-md-6 mt-4">
@@ -52,7 +52,7 @@
                         if (result ?? false)
                         {
                             <div class="alert mt-4 col-md-6" role="alert" data-mdb-color="success">
-                                @Html.Raw("Congrats you can be on road!")
+                                @Html.Raw("Congrats you can be on road, there is no pico placa for your plate number!")
                             </div>
 
 
@@ -60,7 +60,7 @@
                         else
                         {
                             <div class="alert mt-4 col-md-6" role="alert" data-mdb-color="danger">
-                                @Html.Raw("Be careful, you have Pico Placa!")
+                                @Html.Raw("Be careful, can't be on road! Your plate number has pico placa")
                             </div>
                         }
                     }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "PXv3scjoA5pB4CWVoBOnRNJxJQ9Wirq9l6R9FmmWB8E=",
+  "Hash": "uRMRZb5GKwJmNLbQpc5q7oZLtkAIer17XMxf0phkBdA=",
   "Source": "Pico Placa Predictor",
   "BasePath": "_content/Pico Placa Predictor",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\JoseGuerra\\Documents\\GitHub\\Pico-Placa-Predictor\\Pico Placa Predictor\\wwwroot\\img\\logo.svg",
+      "SourceId": "Pico Placa Predictor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\JoseGuerra\\Documents\\GitHub\\Pico-Placa-Predictor\\Pico Placa Predictor\\wwwroot\\",
+      "BasePath": "_content/Pico Placa Predictor",
+      "RelativePath": "img/logo.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\logo.svg"
     },
     {
       "Identity": "C:\\Users\\JoseGuerra\\Documents\\GitHub\\Pico-Placa-Predictor\\Pico Placa Predictor\\wwwroot\\js\\site.js",

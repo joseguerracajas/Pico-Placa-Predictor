@@ -15,14 +15,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\JoseGuerra\Documents\GitHub\Pico-Placa-Predictor\Pico Placa Predictor
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/JoseGuerra/Documents/GitHub/Pico-Placa-Predictor/Pico Placa Predictor/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/JoseGuerra/Documents/GitHub/Pico-Placa-Predictor/Pico Placa Predictor/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/JoseGuerra/Documents/GitHub/Pico-Placa-Predictor/Pico Placa Predictor/Views/Predictor/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlZGljdG9yXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

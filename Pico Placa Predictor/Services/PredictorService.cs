@@ -4,12 +4,16 @@ namespace Pico_Placa_Predictor.Services
 {
     public class PredictorService
     {
-        public bool canBeonRoad(Predictor predictor)
+        public bool CanBeonRoad(Predictor predictor)
         {
             DateOnly inputDate = predictor.Date;
             DayOfWeek inputDayOfWeek = inputDate.DayOfWeek;
             TimeOnly inputTime = predictor.Time;
             int inputLastDigit = getPlateNumberLastDigit(predictor.PlateNumber ?? "");
+
+            var holidays = DataPicoPlaca.Holidays.FindAll( h => h.Date == inputDate).Count > 0;
+
+            if (holidays) return true;
 
             var restrictons= DataPicoPlaca.Restrictions.FindAll(r =>
             {

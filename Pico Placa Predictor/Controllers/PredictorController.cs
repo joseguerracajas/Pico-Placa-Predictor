@@ -26,7 +26,7 @@ namespace Pico_Placa_Predictor.Controllers
             {
                 try
                 {
-                    var canBeOnRoad = predictorServide.canBeonRoad(predictor);
+                    var canBeOnRoad = predictorServide.CanBeonRoad(predictor);
                     TempData["result"] = canBeOnRoad;
                 }
                 catch(Exception ex)
