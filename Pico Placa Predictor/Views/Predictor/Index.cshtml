@@ -6,6 +6,7 @@
     String? error = (String?)TempData["error"];
     List<Restriction> restrictions = ViewBag.Restrictions;
     List<Holiday> holidays = ViewBag.Holidays;
+    String? plateNumber = (String?)TempData["plateNumber"]; 
 
 }
 
@@ -52,7 +53,7 @@
                         if (result ?? false)
                         {
                             <div class="alert mt-4 col-md-6" role="alert" data-mdb-color="success">
-                                @Html.Raw("Congrats you can be on road, there is no pico placa for your plate number!")
+                                @Html.Raw("Congrats you can be on road, there is no pico placa for your plate number " + (plateNumber?.ToUpper()??"")+ "!")
                             </div>
 
 
@@ -60,7 +61,7 @@
                         else
                         {
                             <div class="alert mt-4 col-md-6" role="alert" data-mdb-color="danger">
-                                @Html.Raw("Be careful, can't be on road! Your plate number has pico placa")
+                                @Html.Raw("Be careful, can't be on road! Your plate number has pico placa " + (plateNumber?.ToUpper()??"")+ "!")
                             </div>
                         }
                     }

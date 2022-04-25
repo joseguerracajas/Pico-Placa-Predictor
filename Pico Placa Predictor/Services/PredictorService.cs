@@ -11,17 +11,16 @@ namespace Pico_Placa_Predictor.Services
             TimeOnly inputTime = predictor.Time;
             int inputLastDigit = getPlateNumberLastDigit(predictor.PlateNumber ?? "");
 
-            var holidays = DataPicoPlaca.Holidays.FindAll( h => h.Date == inputDate).Count > 0;
+            var holidays = DataPicoPlaca.Holidays.FindAll(h => h.Date == inputDate).Count > 0;
 
             if (holidays) return true;
 
-            var restrictons= DataPicoPlaca.Restrictions.FindAll(r =>
-            {
-                return r.DayOfWeek == inputDayOfWeek && r.PlateNumbers.Contains(inputLastDigit) && r.Schedules?.FindAll(s => inputTime.IsBetween(s.StartTime, s.EndTime)).Count > 0;
-            });
+            var restrictons = DataPicoPlaca.Restrictions.FindAll(r =>
+             {
+                 return r.DayOfWeek == inputDayOfWeek && r.PlateNumbers.Contains(inputLastDigit) && r.Schedules?.FindAll(s => inputTime.IsBetween(s.StartTime, s.EndTime)).Count > 0;
+             });
 
             return restrictons.Count == 0;
-
 
         }
 
