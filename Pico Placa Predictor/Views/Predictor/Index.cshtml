@@ -2,90 +2,110 @@
 @model Predictor
 
 @{
-    bool? result = (bool?) TempData["result"];
-    String? error = (String?) TempData["error"];
+    bool? result = (bool?)TempData["result"];
+    String? error = (String?)TempData["error"];
+    List<Restriction> restrictions = ViewBag.Restrictions;
+    List<Holiday> holidays = ViewBag.Holidays;
 
 }
 
 <h1>Pico y Placa Predictor</h1>
 <hr />
 <div class="row">
-    <div class="col-md-6">
-        <div class="row">
-            <form asp-action="Predict" class="row">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="col-md-6 mt-4">
+        <form asp-action="Predict" class="row">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-                  <div class="col-md-12 pb-4">
-                    <div class="form-outline">
-                      <input asp-for="PlateNumber" type="text" class="form-control" id="validationCustom01"/>
-                      <label asp-for="PlateNumber" for="validationCustom01" class="form-label"></label>
-                    </div>
-                      <span asp-validation-for="PlateNumber" class="text-danger"></span>
-                  </div>
-
-                  <div class="col-md-6 pb-4">
-                    <div class="form-outline datepicker">
-                        <input asp-for="Date" type="text" class="form-control" id="date" placeholder="DD/MM/YYYY" />
-                        <label asp-for="Date" for="date" class="form-label">Select a date</label>
-                    </div>
-                      <span asp-validation-for="Date" class="text-danger"></span>
-                  </div>
-
-                  <div class="col-md-6 pb-4">
-                    <div class="form-outline timepicker-inline-24">
-                        <input asp-for="Time" type="text" class="form-control" id="time" placeholder="HH:MM" />
-                        <label asp-for="Time" for="time" class="form-label">Select a time</label>
-                    </div>
-                      <span asp-validation-for="Time" class="text-danger"></span>
-                  </div>
-
-                <div class="form-group">
-                    <input type="submit" value="Predict" class="btn btn-primary" />
+            <div class="col-md-12 pb-4">
+                <div class="form-outline">
+                    <input asp-for="PlateNumber" type="text" class="form-control" id="validationCustom01" />
+                    <label asp-for="PlateNumber" for="validationCustom01" class="form-label"></label>
                 </div>
-            </form>
-        </div>
+                <span asp-validation-for="PlateNumber" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6 pb-4">
+                <div class="form-outline datepicker">
+                    <input asp-for="Date" type="text" class="form-control" id="date" placeholder="DD/MM/YYYY" />
+                    <label asp-for="Date" for="date" class="form-label">Select a date</label>
+                </div>
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6 pb-4">
+                <div class="form-outline timepicker-inline-24">
+                    <input asp-for="Time" type="text" class="form-control" id="time" placeholder="HH:MM" />
+                    <label asp-for="Time" for="time" class="form-label">Select a time</label>
+                </div>
+                <span asp-validation-for="Time" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Predict" class="btn btn-primary" />
+            </div>
+
+            @{
+                if (error == null)
+                {
+                    if (result != null)
+                    {
+                        if (result ?? false)
+                        {
+                            <div class="alert mt-4 col-md-6" role="alert" data-mdb-color="success">
+                                @Html.Raw("Congrats you can be on road!")
+                            </div>
+
+
+                        }
+                        else
+                        {
+                            <div class="alert mt-4 col-md-6" role="alert" data-mdb-color="danger">
+                                @Html.Raw("Be careful, you have Pico Placa!")
+                            </div>
+                        }
+                    }
+                }
+                else
+                {
+                    <div class="alert mt-4 col-md-6" role="alert" data-mdb-color="error">
+                        @Html.Raw(error??"An error has ocurred")
+                    </div>
+                }
+            }
+        </form>
+    </div>
+    <div class="col-md-6 mt-4">
+        <h3>Restrictions</h3>
+        <ul>
+            @foreach (var restriction in restrictions)
+            {
+                <li>@restriction.ToString()</li>
+            }
+        </ul>
+
+        <h3>Holidays</h3>
+        <ul>
+            @foreach (var holiday in holidays)
+            {
+                <li>@holiday.ToString()</li>
+            }
+        </ul>
+
     </div>
 </div>
 
-@{
-    if (error == null)
-    {
-        if (result!=null)
-        {
-            if (result??false)
-            {
-                <div class="alert mt-4 col-md-6" role="alert" data-mdb-color="success">
-                    @Html.Raw("Congrats you can be on road!")
-                </div>
-
-
-            }
-            else
-            {
-                <div class="alert mt-4 col-md-6" role="alert" data-mdb-color="danger">
-                     @Html.Raw("Be careful, you have Pico Placa!")
-                </div>
-            }
-        }
-    }
-    else
-    {
-        <div class="alert mt-4 col-md-6" role="alert" data-mdb-color="error">
-          @Html.Raw(error??"An error has ocurred")
-        </div>
-    }
-}
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
 }
 
 <script>
-    window.addEventListener('DOMContentLoaded', (event) => {
-    const pickerInline = document.querySelector('.timepicker-inline-24');
-    const timepickerMaxMin = new mdb.Timepicker(pickerInline, {
-      format24:true,
-      inline: true
+        window.addEventListener('DOMContentLoaded', (event) => {
+        const pickerInline = document.querySelector('.timepicker-inline-24');
+        const timepickerMaxMin = new mdb.Timepicker(pickerInline, {
+          format24:true,
+          inline: true
+        });
     });
-});
 </script>

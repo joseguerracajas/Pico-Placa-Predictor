@@ -15,5 +15,8 @@ namespace Pico_Placa_Predictor.Models
             StartTime = startTime;
             EndTime = endTime;
         }
+
+        public override string ToString() => StartTime.ToShortTimeString() + "-" + EndTime.ToShortTimeString();
+
     }
 }

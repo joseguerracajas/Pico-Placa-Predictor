@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Pico_Placa_Predictor.Models;
 using Pico_Placa_Predictor.Services;
+using Pico_Placa_Predictor.Data;
 
 namespace Pico_Placa_Predictor.Controllers
 {
@@ -11,6 +12,9 @@ namespace Pico_Placa_Predictor.Controllers
         // GET: PredictorController
         public ActionResult Index()
         {
+            ViewBag.Restrictions = DataPicoPlaca.Restrictions;
+            ViewBag.Holidays = DataPicoPlaca.Holidays;
+
             return View();
         }
 

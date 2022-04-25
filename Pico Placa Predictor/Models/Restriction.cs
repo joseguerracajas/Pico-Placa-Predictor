@@ -21,5 +21,8 @@ namespace Pico_Placa_Predictor.Models
             Schedules = schedules;
             PlateNumbers = plateNumbers;
         }
+
+        public override string ToString() => DayOfWeek + " cant be on road plate numbers ending in " + String.Join(",", PlateNumbers) + " in the schedules " + String.Join(",", Schedules!);
+
     }
 }

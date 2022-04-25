@@ -15,5 +15,7 @@ namespace Pico_Placa_Predictor.Models
             Description = description;
             StartTime = startTime;
         }
+
+        public override string ToString() => Description + ": " + StartTime.ToString();
     }
 }
