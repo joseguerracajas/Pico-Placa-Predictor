@@ -33,7 +33,7 @@ namespace Pico_Placa_Predictor.Data
             new Holiday("All Souls' Day", new DateOnly(2022,11,3)),
             new Holiday("Independence of Cuenca", new DateOnly(2022,11,4)),
             new Holiday("Founding of Quito", new DateOnly(2022,12,6)),
-            new Holiday("Navidad", new DateOnly(2022,12,26)),
+            new Holiday("Christmas", new DateOnly(2022,12,26)),
 
 
 
