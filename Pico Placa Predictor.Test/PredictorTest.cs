@@ -43,7 +43,7 @@ namespace Pico_Placa_Predictor.Test
         Predictor predictor24 = new Predictor("PDL7591", new DateOnly(2021, 4, 5), new TimeOnly(8, 21));
 
         [Fact]
-        private void PredictTesting()
+        public void PredictTesting()
         {
             bool canBeOnRoad1 = predictorService.CanBeonRoad(predictor1);
             bool canBeOnRoad2 = predictorService.CanBeonRoad(predictor2);

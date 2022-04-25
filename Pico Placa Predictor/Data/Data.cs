@@ -21,10 +21,24 @@ namespace Pico_Placa_Predictor.Data
 
         public static List<Holiday> Holidays = new List<Holiday>
         {
-            new Holiday("New year", new DateOnly(2021,1,1)),
-            new Holiday("Carnival", new DateOnly(2021,2,28)),
-            new Holiday("Carnival", new DateOnly(2021,3,1)),
-            new Holiday("Good Friday", new DateOnly(2021,4,15)),
+            new Holiday("New year", new DateOnly(2022,1,1)),
+            new Holiday("Carnival", new DateOnly(2022,2,28)),
+            new Holiday("Carnival", new DateOnly(2022,3,1)),
+            new Holiday("Good Friday", new DateOnly(2022,4,15)),
+            new Holiday("Labor day", new DateOnly(2022,5,1)),
+            new Holiday("Battle of Pichincha", new DateOnly(2022,5,23)),
+            new Holiday("Founding of Guayaquil", new DateOnly(2022,7,25)),
+            new Holiday("Ecuador's first cry of independence", new DateOnly(2022,8,12)),
+            new Holiday("Independence of Guayaquil", new DateOnly(2022,10,10)),
+            new Holiday("All Souls' Day", new DateOnly(2022,11,3)),
+            new Holiday("Independence of Cuenca", new DateOnly(2022,11,4)),
+            new Holiday("Founding of Quito", new DateOnly(2022,12,6)),
+            new Holiday("Navidad", new DateOnly(2022,12,26)),
+
+
+
+
+
         };
 
 
