@@ -2,8 +2,6 @@
 
 <p>This is a Web App developed with ASP.Net Core 6.</p>
 
-<p><a href="https://picoplacapredictor.azurewebsites.net/">You can check the demo in the following link</a></p>
-
 <p>The main purpose of this app is to determine if a plate number can circulate given a date and time.</p>
 
 <p>The structure of the project is as follows:
